@@ -84,7 +84,7 @@ html {
 	border-width: 0;
 	font-weight: bold;
 	font-size: 15px;
-    background-color: green;
+    background-color: rgb(1, 190, 1);
 }
 
 #clear{
@@ -92,7 +92,7 @@ html {
 }
 
 #backspace{
-    background-color: sandybrown;
+    background-color: rgb(250, 180, 10);
 }
 
 .number, .operator,.dot, #equal{
