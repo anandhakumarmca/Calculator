@@ -91,6 +91,10 @@ html {
     background-color: red;
 }
 
+#backspace{
+    background-color: brown;
+}
+
 .number, .operator,.dot, #equal{
 	cursor: pointer;
 }
