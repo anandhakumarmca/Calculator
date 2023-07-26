@@ -115,14 +115,31 @@ for(var i =0;i<number.length;i++){
 			output=output+this.id;
 			printOutput(output);
 		}
-	});
+	}); 
 }
+
+function onKeyDown(event) {
+    const key = event.key;
+    const numbers = "0123456789.";
+    
+    if (numbers.includes(key)) {
+      var output = reverseNumberFormat(getOutput());
+      if (!isNaN(output)) {
+        output += key;
+        printOutput(output);
+      }
+      }else{
+        alert("Only Numbers are allowed");
+      }
+  }
+  
+  document.addEventListener('keydown', onKeyDown);
 
 var addOperator = document.getElementById("add");
         addOperator.addEventListener('click', function(){
             var output = getOutput();
             var history = getHistory();
-
+            
             if(output != "" || history != ""){
                 output = output == "" ? output : reverseNumberFormat(output);
                 history = history + output + '+';
@@ -135,7 +152,8 @@ var addOperator = document.getElementById("subtract");
         addOperator.addEventListener('click', function(){
             var output = getOutput();
             var history = getHistory();
-
+             history = removeConsecutiveOperators(history);
+            output = removeConsecutiveOperators(output);
             if(output != "" || history != ""){
                 output = output == "" ? output : reverseNumberFormat(output);
                 history = history + output + '-';
@@ -225,6 +243,7 @@ var clearOperator = document.getElementById("clear");
             printOutput("");
 });
 
+
 function getHistory(){
 	return document.getElementById("history-value").innerText;
 }
@@ -258,3 +277,4 @@ function getFormattedNumber(num){
 function reverseNumberFormat(num){
 	return Number(num.replace(/,/g,''));
 }
+  
