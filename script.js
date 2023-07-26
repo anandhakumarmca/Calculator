@@ -152,8 +152,7 @@ var subOperator = document.getElementById("subtract");
         subOperator.addEventListener('click', function(){
             var output = getOutput();
             var history = getHistory();
-             history = removeConsecutiveOperators(history);
-            output = removeConsecutiveOperators(output);
+            
             if(output != "" || history != ""){
                 output = output == "" ? output : reverseNumberFormat(output);
                 history = history + output + '-';
