@@ -148,8 +148,8 @@ var addOperator = document.getElementById("add");
             }
 });
 
-var addOperator = document.getElementById("subtract");
-        addOperator.addEventListener('click', function(){
+var subOperator = document.getElementById("subtract");
+        subOperator.addEventListener('click', function(){
             var output = getOutput();
             var history = getHistory();
              history = removeConsecutiveOperators(history);
